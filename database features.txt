@@ -1,0 +1,18 @@
+Features of the System:
+Client Side
+-Time-in/Time-out
+
+ Admin Side
+CRUD - Employee Attendance
+CRUD - Employee
+Employee Cash Advance
+Employee Overtime
+Employee Schedule
+Generates Payslip
+Create Position and Employee Rate per hour
+Payroll on Date Range
+Payslip on Date Range
+Detects Employee if Late or On-Time
+Deductions: SSS, Tax, Others
+CRUD - User Management System
+Generates Reports

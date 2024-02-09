@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Something</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <span class="logo" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Payroll System</span>
+        </div>
+    </nav>
+    <header>
+        <section class="navigation">
+            <a href="/adminIndex"><li>Home</li></a>
+                <!-- <a href="/class"><li>Add Class</li></a> -->
+                <a href="/employees"><li>Add Employee</li></a>
+                <!-- <a href="/employeesReport"><li>Edit Salary</li></a> -->
+                <a href="/salary"><li>Assign Salary</li></a>
+                <a href="/yearwiseSalary"><li>Year wise Report</li></a>
+                <a href="/"><li>Logout</li></a>
+        </section>
+        <section class="body">
+            <h1 style="text-align: center; border:2px solid white; margin-top: 15px;">Welcome to Payroll System</h1>
+            <div class="details-container">
+                <div class="container">
+                    <h3>Employees</h3>
+                    <span><%= employeedata[0]['count(*)'] %></span>
+                </div>
+                <div class="container">
+                    <h3>Active</h3>
+                    <span><%= employeedata[0]['active'] %></span>
+                </div>
+                <div class="container">
+                    <h3>Deactive</h3>
+                    <span><%= employeedata[0]['deactive'] %></span>
+                </div>
+            </div>
+        </section>
+    </header>
+</body>
+</html>

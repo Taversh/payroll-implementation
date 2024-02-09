@@ -1,0 +1,12 @@
+table{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: white;
+    border-style: dashed;
+}
+.details{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}

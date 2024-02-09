@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <title>Payroll System</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <span class="logo" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Payroll System</span>
+        </div>
+    </nav>
+    <header>
+        <section class="navigation">
+            <a href="/adminIndex"><li>Home</li></a>
+                <!-- <a href="/class"><li>Add Class</li></a> -->
+                <a href="/employees"><li>Add Employee</li></a>
+                <!-- <a href="/employeesReport"><li>Edit Salary</li></a> -->
+                <a href="/salary"><li>Assign Salary</li></a>
+                <a href="/yearwiseSalary"><li>Year wise Report</li></a>
+                <a href="/"><li>Logout</li></a>
+        </section>
+        <section class="body">
+            <h1 style="text-align: center; border:2px solid white; margin-top: 15px;">Salary Report</h1>
+            <br>
+            
+            <% if(action == 'add'){ %>
+                
+            <% } else{ %>
+                <table cellpadding="5" cellspacing="5" border="1" width="90%">
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Salary</th>
+                        <th>Tax Info</th>
+                        <th>Yearly Bonus</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    <%
+                    if (sampleData.length > 0)
+                    {
+                        sampleData.forEach((data)=>{
+                            %>
+                            <tr>
+                                <td><%= data.empID %></td>
+                                <td><%= data.firstName %></td>
+                                <td><%= data.lastName %></td>
+                                <td><%= data.monthlySalary %></td>
+                                <td><%= data.taxInfo %></td>
+                                <td><%= data.yearlyBonus %></td>
+                                <td><%= data.status %></td>
+                                <td><a class="update" href="/yearwiseSalary/updateEmp/:<%= data.empID %>/:<%= data.status %>">Update</a></td>
+                                <td><a class="update" href="#">Delete</a></td>
+                            </tr>
+                            <%
+                        });
+                    }
+                    else
+                    {
+                    %>
+                    <tr>
+                        <td colspan="6">No Data Found</td>
+                    </tr>
+                    <%
+                    }
+                    %>
+                </table>
+            <% }%>
+        </section>
+    </header>
+</body>
+</html>
